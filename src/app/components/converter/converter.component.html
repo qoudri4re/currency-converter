@@ -1,0 +1,66 @@
+<div class="converter">
+  <div *ngIf="error" class="error__container">
+    <div suiColour="red" sui-message [suiDismissible]="true" class="error__msg">
+      <div sui-message-header></div>
+      <p>Error: Target Currency cannot be base currency</p>
+    </div>
+  </div>
+  <div class="exchange__container">
+    <div class="exchange__info">
+      <h3>Currency Converter</h3>
+      <h2>Exchange Rate: {{ conversionResult }}</h2>
+    </div>
+    <div class="exchange__container__currencies">
+      <div class="amount__input">
+        <div sui-form class="amount__input">
+          <div suiFormField>
+            <label class="must__white">Amount</label>
+            <input type="number" [(ngModel)]="amount" (input)="validate()" />
+          </div>
+        </div>
+      </div>
+      <div class="exchanges">
+        <div class="left__exchange exchange__currency">
+          <label for="">from</label>
+          <sui-select
+            [suiSearch]="true"
+            suiPlaceholder="Currency"
+            [suiOptions]="exchanges"
+            class="select__box"
+            [(ngModel)]="baseCurrency"
+            (ngModelChange)="validate()"
+          ></sui-select>
+        </div>
+        <div class="exchange__icon">
+          <i
+            sui-icon
+            suiIconType="exchange"
+            suiColour="black"
+            suiSize="large"
+          ></i>
+        </div>
+        <div class="right__exchange exchange__currency">
+          <label for="">to</label>
+          <sui-select
+            class="select__box"
+            [suiSearch]="true"
+            suiPlaceholder="Currency"
+            [suiOptions]="exchanges"
+            [(ngModel)]="targetCurrency"
+            (ngModelChange)="validate()"
+          ></sui-select>
+        </div>
+      </div>
+      <div class="convert">
+        <button
+          sui-button
+          [suiFluid]="true"
+          (click)="convert()"
+          [disabled]="disableConvertButton"
+        >
+          Convert
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

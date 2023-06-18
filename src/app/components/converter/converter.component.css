@@ -1,0 +1,105 @@
+.converter {
+  width: 35%;
+  height: 80%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.error__container {
+  width: 100%;
+  height: 12%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+.error__msg {
+  width: 100%;
+  height: 100%;
+}
+.exchange__container {
+  background: linear-gradient(145deg, #0d47a1, #1976d2);
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  color: #fff;
+  margin-top: 15%;
+}
+.exchange__container
+  .exchange__container__currencies
+  .amount__input
+  .must__white {
+  color: #fff;
+}
+.exchange__info {
+  /* background-color: red; */
+  height: 28%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.exchange__info h3,
+.exchange__info h2 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+.exchange__container__currencies {
+  /* background-color: darksalmon; */
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.amount__input {
+  width: 80%;
+  width: 95%;
+  margin: 0 auto;
+}
+.exchanges {
+  display: flex;
+  height: 28%;
+}
+.convert {
+  width: 95%;
+  height: 20%;
+  margin: 5px auto;
+}
+
+.convert button:disabled {
+  cursor: not-allowed !important;
+  background-color: red;
+}
+.exchange__currency {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+.exchange__currency label {
+  align-self: left;
+  width: 90%;
+}
+.select__box {
+  width: 10%;
+}
+.exchange__icon {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12%;
+  cursor: pointer;
+}
+.exchange__icon i {
+  margin-top: 20px;
+}
+sui-select {
+  width: 100%;
+}
