@@ -14,6 +14,7 @@ export class ConverterComponent {
   error: boolean = false;
   disableConvertButton: boolean = true;
   conversionResult: string = '0.0';
+  displayLoadingSpinner: boolean = false;
 
   exchanges = [
     { text: 'US Dollars', value: 'USD' },
@@ -34,7 +35,11 @@ export class ConverterComponent {
   convert() {
     if (this.targetCurrency === this.baseCurrency) {
       this.error = true;
+      setTimeout(() => {
+        this.error = false;
+      }, 3000);
     } else {
+      this.displayLoadingSpinner = true;
       let currencySign: String = '';
       this.conversionService
         .convertCurrency(this.baseCurrency, this.targetCurrency, this.amount)
@@ -61,6 +66,7 @@ export class ConverterComponent {
           this.conversionResult =
             currencySign +
             parseFloat(data.conversion_result).toFixed(2).toString();
+          this.displayLoadingSpinner = false;
         });
     }
   }

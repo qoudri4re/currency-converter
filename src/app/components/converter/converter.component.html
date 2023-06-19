@@ -34,7 +34,7 @@
         <div class="exchange__icon">
           <i
             sui-icon
-            suiIconType="exchange"
+            suiIconType="arrow right"
             suiColour="black"
             suiSize="large"
           ></i>
@@ -58,7 +58,15 @@
           (click)="convert()"
           [disabled]="disableConvertButton"
         >
-          Convert
+          <ng-container *ngIf="displayLoadingSpinner">
+            <i
+              *ngIf="displayLoadingSpinner"
+              sui-icon
+              [suiLoading]="true"
+              suiIconType="spinner"
+            ></i>
+          </ng-container>
+          <ng-container *ngIf="!displayLoadingSpinner"> Convert </ng-container>
         </button>
       </div>
     </div>
